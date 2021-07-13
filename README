@@ -1,0 +1,11 @@
+"Mixin" layer for adding latest Linux kernel LTS into the Yocto Project LTS.
+
+Currently it adds Linux 5.10 LTS on top of the "Dunfell" 3.1 Yocto Project LTS.
+At the time Dunfell was released in April 2020, kernel 5.10 was not out yet and
+officially Dunfell supports 5.4 kernel LTS. This thin special-purpose mixin
+layer is meant to address this issue by backporting linux-yocto kernel recipes
+(and corresponding out-of-tree kernel modules) from a latest stable release of
+openembedded-core, currently "Hardknott".
+
+Maintainers:
+Denys Dmytriyenko <denis@denix.org>
