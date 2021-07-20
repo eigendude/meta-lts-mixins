@@ -7,5 +7,9 @@ layer is meant to address this issue by backporting linux-yocto kernel recipes
 (and corresponding out-of-tree kernel modules) from a latest stable release of
 openembedded-core, currently "Hardknott".
 
+If the new kernel version is not picked up automatically, you may want to add
+the following line to your distro config or local.conf:
+PREFERRED_VERSION_linux-yocto ?= "5.10%"
+
 Maintainers:
 Denys Dmytriyenko <denis@denix.org>
