@@ -1,0 +1,10 @@
+"Mixin" layer for adding latest Docker versions into the Yocto Project LTS.
+
+This is a supplementary layer to dunfell/go branch of meta-lts-mixins. As that
+layer updates go toolchain to newer versions, this renders the docker recipes
+from dunfell branch of meta-virtualization unbuildable. The purpose of this layer
+is to backport latest, compatible docker from meta-virtualization master to
+dunfell.
+
+Maintainers:
+Alexander Kanavin <alex@linutronix.de>
