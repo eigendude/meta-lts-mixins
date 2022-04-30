@@ -64,6 +64,7 @@ KERNEL_FEATURES_append = " ${@bb.utils.contains("DISTRO_FEATURES", "ptest", " fe
 KERNEL_FEATURES_append = " ${@bb.utils.contains("DISTRO_FEATURES", "ptest", " features/gpio/mockup.scc", "", d)}"
 KERNEL_FEATURES_append_powerpc =" arch/powerpc/powerpc-debug.scc"
 KERNEL_FEATURES_append_powerpc64 =" arch/powerpc/powerpc-debug.scc"
+KERNEL_FEATURES_append_powerpc64le =" arch/powerpc/powerpc-debug.scc"
 
 INSANE_SKIP_kernel-vmlinux_qemuppc64 = "textrel"
 
