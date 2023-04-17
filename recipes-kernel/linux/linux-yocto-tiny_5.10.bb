@@ -1,5 +1,5 @@
 KBRANCH ?= "v5.10/standard/tiny/base"
-KBRANCH_qemuarm  ?= "v5.10/standard/tiny/arm-versatile-926ejs"
+KBRANCH:qemuarm  ?= "v5.10/standard/tiny/arm-versatile-926ejs"
 
 LINUX_KERNEL_TYPE = "tiny"
 KCONFIG_MODE = "--allnoconfig"
@@ -15,7 +15,7 @@ DEPENDS += "openssl-native util-linux-native"
 KMETA = "kernel-meta"
 KCONF_BSP_AUDIT_LEVEL = "2"
 
-SRCREV_machine_qemuarm ?= "44dc7fc9b0ab8f14f4ebe4dea9aaec050c80fa57"
+SRCREV_machine:qemuarm ?= "44dc7fc9b0ab8f14f4ebe4dea9aaec050c80fa57"
 SRCREV_machine ?= "fa23e23c26057013e592f767f3e515d6abb58b87"
 SRCREV_meta ?= "e462ebf62581138ef03de1783e93c49c2f0b1051"
 
@@ -29,4 +29,4 @@ COMPATIBLE_MACHINE = "^(qemux86|qemux86-64|qemuarm|qemuarmv5)$"
 # Functionality flags
 KERNEL_FEATURES = ""
 
-KERNEL_DEVICETREE_qemuarmv5 = "versatile-pb.dtb"
+KERNEL_DEVICETREE:qemuarmv5 = "versatile-pb.dtb"
