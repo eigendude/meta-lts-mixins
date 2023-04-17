@@ -73,3 +73,6 @@ KERNEL_FEATURES:append:powerpc64le =" arch/powerpc/powerpc-debug.scc"
 
 INSANE_SKIP:kernel-vmlinux:qemuppc64 = "textrel"
 
+# devupstream for this case is broken in dunfell and requires later fix
+# from commit d0edb03088d0d1c20c899daed1bb3a7110b19670
+BBCLASSEXTEND:remove = "devupstream:target"
