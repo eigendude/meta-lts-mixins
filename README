@@ -19,5 +19,4 @@ The patches can be backport from openembedded-core with:
  git am --signoff -p4 --directory=recipes-devtools/go-1.20
 
 Maintainers:
-Alexander Kanavin <alex@linutronix.de>
 Jose Quaresma <jose.quaresma@foundries.io>
