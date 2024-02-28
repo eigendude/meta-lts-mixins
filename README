@@ -11,12 +11,12 @@ Including the layer automatically picks up the latest Go version; different vers
 need to be set explicitly by adding the following line to your distro config 
 or local.conf:
 
-GOVERSION = "1.21%"
+GOVERSION = "1.22%"
 
 The patches can be backport from openembedded-core with:
 
  git -C ../openembedded-core format-patch --stdout -1 origin/master meta/recipes-devtools/go | \
- git am --signoff -p4 --directory=recipes-devtools/go-1.21
+ git am --signoff -p4 --directory=recipes-devtools/go-1.22
 
 Maintainers:
 Jose Quaresma <jose.quaresma@foundries.io>
