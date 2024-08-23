@@ -16,6 +16,12 @@ SRCREV = "f919c3a889f0ec7d63a48b5d0ed064386b0980bd"
 
 SRC_URI = "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master"
 
+# Apply patches
+FILESEXTRAPATHS:prepend := "${THISDIR}/u-boot:"
+SRC_URI:append = " \
+    file://0001-Add-RPi-5-device-tree.patch \
+"
+
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
 
