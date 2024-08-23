@@ -20,6 +20,7 @@ SRC_URI = "git://source.denx.de/u-boot/u-boot.git;protocol=https;branch=master"
 FILESEXTRAPATHS:prepend := "${THISDIR}/u-boot:"
 SRC_URI:append = " \
     file://0001-Add-RPi-5-device-tree.patch \
+    file://0002-Add-hack-for-RPi-5.patch \
 "
 
 S = "${WORKDIR}/git"

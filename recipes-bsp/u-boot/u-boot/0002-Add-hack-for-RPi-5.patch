@@ -1,0 +1,50 @@
+From 52a946e4a5b081e5a6c6a0e752588d2a6bef1373 Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Fri, 23 Aug 2024 16:15:37 -0700
+Subject: [PATCH 2/2] Add hack for RPi 5
+
+---
+ arch/arm/dts/bcm283x-u-boot.dtsi | 29 +++++++++++++++++++++++------
+ 1 file changed, 23 insertions(+), 6 deletions(-)
+
+diff --git a/arch/arm/dts/bcm283x-u-boot.dtsi b/arch/arm/dts/bcm283x-u-boot.dtsi
+index ec0f93dd85..3b74594fe8 100644
+--- a/arch/arm/dts/bcm283x-u-boot.dtsi
++++ b/arch/arm/dts/bcm283x-u-boot.dtsi
+@@ -20,10 +20,27 @@
+ 	bootph-all;
+ };
+ 
+-&uart0_gpio14 {
+-	bootph-all;
+-};
++/*
++ * These lines have been commented out to bypass the initialization of the
++ * GPIO serial interfaces during U-Boot. This is a temporary workaround to
++ * allow U-Boot to compile and boot successfully on the Raspberry Pi 5, as
++ * specifying these GPIO pins for UART may cause compilation errors or prevent
++ * U-Boot from functioning correctly.
++ *
++ * This configuration effectively disables serial output over the GPIO pins
++ * for U-Boot, but note that this does not affect the kernel's use of UART0
++ * if `dtparam=uart0_console` is specified in config.txt.
++ *
++ * Removing these lines might be necessary for successful booting and operation
++ * in U-Boot for Raspberry Pi 5 until full support is added for this platform.
++ *
++ * Credit to pyxlwuff for identifying this workaround.
++ */
+ 
+-&uart1_gpio14 {
+-	bootph-all;
+-};
++//&uart0_gpio14 {
++//	bootph-all;
++//};
++
++//&uart1_gpio14 {
++//	bootph-all;
++//};
+-- 
+2.34.1
+
